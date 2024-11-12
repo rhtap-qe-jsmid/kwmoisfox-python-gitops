@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: kwmoisfox-python-gitops
+  description: This is GitOps manifest for kwmoisfox-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: kwmoisfox-python
+    backstage.io/kubernetes-id: kwmoisfox-python 
+    backstage.io/techdocs-ref: dir:. 
+    jenkins.io/job-full-name: kwmoisfox-python-gitops   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:kwmoisfox-python
